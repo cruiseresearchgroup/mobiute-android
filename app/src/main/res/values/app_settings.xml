@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_settings_base_server_url">http://baseurl-or-ipaddress:8080/</string>
+</resources>

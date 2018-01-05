@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.ute.mobi"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".AppBoxManager"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SessionConnectExperimentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ute.mobi.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".activities.SessionLabelingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".activities.SessionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+
+        <service android:name=".activities.services.SessionSensorRecorderSrv"/>
+
+        <receiver android:name=".activities.breceivers.StartSessionSensorRecorderSrvReceiver"></receiver>
+        <receiver android:name=".activities.breceivers.NoiseLevelBroadcastReceiver"></receiver>
+        <receiver android:name=".activities.breceivers.BluetoothBroadcastReceiver"></receiver>
+        <receiver android:name=".activities.breceivers.BluetoothDiscoveryBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.FOUND"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".activities.breceivers.WifiBroadcastReceiver"></receiver>
+        <receiver android:name=".activities.breceivers.WifiScannedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.SCAN_RESULTS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".activities.breceivers.CellPhoneBroadcastReceiver"></receiver>
+        <receiver android:name=".activities.breceivers.BatteryInfoBroadcastReceiver"></receiver>
+        <receiver
+            android:name=".activities.breceivers.BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activities.SessionInfoListForUpload"
+            android:label="@string/title_activity_session_info_list_for_upload"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+    </application>
+
+</manifest>

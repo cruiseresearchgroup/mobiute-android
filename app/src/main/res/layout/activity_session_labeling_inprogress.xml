@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_btn_finish_labeling_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_finish_labeling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finish Labeling"
+            android:alpha="0.6"
+            android:textColor="#FFFFFF"
+            android:background="@color/alert_button_color"/>
+        <Button
+            android:id="@+id/btn_clear_labels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear All Labels"
+            android:alpha="0.6"
+            android:textColor="#FFFFFF"
+            android:background="#8BC34A"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_btn_finish_labeling_wrapper"
+        android:layout_alignParentBottom="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/ll_labels">
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>
