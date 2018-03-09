@@ -1,3 +1,6 @@
+> **If you use the resources (algorithm, code and dataset) presented in this repository, please cite our paper.**  
+*The BibTeX entry is provided at the bottom of this page. 
+
 # UTE: A Ubiquitous Data Exploration Platform for Mobile Sensing Experiments
 Ubiquitous data Exploration (UTE) is a mobile sensor data collection, annotation and exploration platform. Our platform facilitates rapid prototyping of data mining experiments by using a flexible and do-it-yourself approach. The platform allows researchers to quickly design and deploy applications on mobile devices in order to record sensor data and the corresponding ground-truth information. The platform is supported by a web interface for designing data collection experiments, synchronizing and storing the sensor data with the corresponding labels, and sharing data.
 
